@@ -1,0 +1,62 @@
+  {
+  "log_distance": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "distance_sq": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "size_origin": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "size_dest": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "continent_origin": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "continent_dest": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "is_international": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "is_transatlantic": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "is_transpacific": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "elevation_origin": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "lat_abs_origin": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  },
+  "same_continent": {
+    "f_stat": 0.0,
+    "p_value": 1.0,
+    "significant": false
+  }
+}

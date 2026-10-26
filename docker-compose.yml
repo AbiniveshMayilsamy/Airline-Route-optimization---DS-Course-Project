@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgis/postgis:15-3.3
+    environment:
+      POSTGRES_DB: airline_opt
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+
+  backend:
+    build:
+      context: .          # repo root — so requirements.txt is reachable
+      dockerfile: backend/Dockerfile
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/airline_opt
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"   # nginx inside listens on 80, expose as 5173
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
